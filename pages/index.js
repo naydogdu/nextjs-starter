@@ -8,7 +8,7 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className={"text-center p-12 min-h-screen flex items-center justify-center"}>
-                <p>Next.js starter with Tailwind 1.9 (IE11 compatible)</p>
+                <p>Next.js starter with Tailwind v2</p>
             </main>
         </div>
     )

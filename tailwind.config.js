@@ -1,16 +1,7 @@
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
-  purge: ['./pages/**/*.js', './components/**/*.js'],
+  purge: ['./pages/**/*.js', './src/**/*.js'],
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      black: '#000',
-      white: '#fff',
-    },
     fontFamily: {
       sans: [
         'Gotham-Rnd',
@@ -27,11 +18,22 @@ module.exports = {
         '"Segoe UI Symbol"',
         '"Noto Color Emoji"',
       ],
+      serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+      mono: [
+        'ui-monospace',
+        'SFMono-Regular',
+        'Menlo',
+        'Monaco',
+        'Consolas',
+        '"Liberation Mono"',
+        '"Courier New"',
+        'monospace',
+      ],
     },
-    extend: {
-
-    },
+    extend: {},
   },
-  variants: {},
+  variants: {
+    extend: {},
+  },
   plugins: [],
 }
