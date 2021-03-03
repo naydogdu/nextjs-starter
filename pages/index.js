@@ -1,15 +1,40 @@
-import Head from 'next/head'
+import Layout from "../src/components/layout/Layout"
+import Container from "../src/components/ui/Container"
+import {getLatestPosts} from "../src/api/post"
+import Title from "../src/components/ui/Title"
+import Modal from "../src/components/ui/Modal"
+import {Button} from "../src/components/ui/Button"
+import {useState} from "react"
 
-export default function Home() {
+const Home = ({posts}) => {
+    const [openModal, setOpenModal] = useState(false)
     return (
-        <div className={"bg-gray-100 text-black"}>
-            <Head>
-                <title>Starter Next App</title>
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-            <main className={"text-center p-12 min-h-screen flex items-center justify-center"}>
-                <p>Next.js starter with Tailwind v2</p>
-            </main>
-        </div>
+        <Layout>
+            <Container css={"flex flex-col space-y-8 md:space-y-0 md:flex-row md:items-center md:justify-between"}>
+                <Title level={1}>
+                    HomePage
+                </Title>
+                <aside>
+                    <Button clickHandler={() => setOpenModal(!openModal)}>
+                        Open Test modal
+                    </Button>
+                    <Modal opened={openModal} hide={() => setOpenModal(false)}>
+                        Test modal content
+                    </Modal>
+                </aside>
+            </Container>
+        </Layout>
     )
+}
+
+export default Home
+
+export async function getStaticProps(context) {
+    const posts = getLatestPosts(3)
+
+    return {
+        props: {
+            posts: [...posts],
+        },
+    }
 }
