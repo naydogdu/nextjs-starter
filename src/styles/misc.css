@@ -1,3 +1,10 @@
+@layer base {
+    /* we can remove focus outline when focus style is already managed */
+    [class*="focus:"]:focus {
+        outline: none;
+    }
+}
+
 @layer utilities {
     @variants responsive {
         .scroll-smooth {

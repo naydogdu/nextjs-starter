@@ -18,8 +18,8 @@ const Header = () => {
 
     return (
         <header className={[
-                    "sticky top-0 bg-white z-10 transition-all duration-150 ease-in",
-                    (sticked > 0 ? "shadow" : null),
+                    "sticky top-0 z-10 transition-all duration-150 ease-in",
+                    (sticked > 0 ? "bg-white shadow" : null),
                 ].join(' ')}
                 data-sticked={sticked > 0 ? true : null}
         >

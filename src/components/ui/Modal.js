@@ -15,8 +15,8 @@ export const CloseModal = (props) => {
     return (
         <button
             className={[
-                "absolute z-10 transform transition right-6 top-6",
-                "hover:scale-95 focus:outline-none",
+                "absolute z-10 p-1 transform transition right-6 top-6",
+                "hover:scale-95 focus:ring-2 focus:ring-secondary",
             ].join(' ')}
             onClick={props.clickHandler}
             type={"button"}
@@ -24,7 +24,7 @@ export const CloseModal = (props) => {
             aria-label="Close"
         >
             <Close
-                className={["stroke-current text-shadow h-6 w-6 md:w-5", computeColor].join(' ')}
+                className={["stroke-current text-shadow h-6 w-6", computeColor].join(' ')}
                 aria-hidden={true}
             />
             <span className={"sr-only"}>Fermer</span>

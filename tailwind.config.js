@@ -52,6 +52,9 @@ module.exports = {
       spacing: {
         128: '32rem',
       },
+      fontSize: {
+        '10xl': ['10rem', { lineHeight: '1' }],
+      },
       maxHeight: {
         80: '20rem',
         160: '40rem',
@@ -66,7 +69,6 @@ module.exports = {
       minHeight: (theme) => ({
         ...theme('spacing'),
       }),
-
       zIndex: {
         '-1': '-1',
         '1': '1',
