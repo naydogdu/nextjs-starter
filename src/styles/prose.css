@@ -5,15 +5,15 @@
             @apply leading-relaxed;
         }
 
-        & > * {
+        & > * + * {
             @apply mt-4;
         }
 
-        & > h2 {
+        & > * + h2 {
             @apply mt-16;
         }
 
-        & > h3 {
+        & > * + h3 {
             @apply mt-12;
         }
 

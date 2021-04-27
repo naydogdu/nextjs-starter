@@ -2,7 +2,7 @@
     @font-face {
         font-family: 'Gilroy';
         src: url('/static/fonts/Gilroy-Regular.woff2') format('woff2'),
-             url('/static/fonts/Gilroy-Regular.woff2') format('woff');
+             url('/static/fonts/Gilroy-Regular.woff') format('woff');
         font-weight: normal;
         font-style: normal;
         font-display: swap;

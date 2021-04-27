@@ -3,7 +3,11 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
-  purge: ['./pages/**/*.js', './src/**/*.js'],
+  purge: [
+    './content/**/*.json',
+    './pages/**/*.js',
+    './src/**/*.js',
+  ],
   theme: {
     screens: {
       sm: '28rem',
