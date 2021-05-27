@@ -12,36 +12,33 @@ const CookieConsentStateContext = createContext()
 const CookieConsentDispatchContext = createContext()
 
 const CookieConsentProvider = ({ children }) => {
-    const [initialCookieValue, setInitialCookieValue] = useState(initial)
+    const [cookieValue, setCookieValue] = useState(initial)
+    const [isInitialRender, setIsInitialRender] = useState(true)
     const [popupIsOpen, setPopupIsOpen] = useState(false)
     const [managePopupIsOpen, setManagePopupIsOpen] = useState(false)
 
-    useEffect(() => {
-        const getCookie = () => {
-            const regex = new RegExp(`(?:(?:^|.*;\\s*)${COOKIE_NAME}\\s*\\=\\s*([^;]*).*$)|^.*$`)
-            const cookie = document.cookie.replace(regex, "$1")
-            return cookie.length ? JSON.parse(cookie) : undefined
-        }
-
-        setInitialCookieValue( getCookie )
-        setPopupIsOpen(!initialCookieValue.isSet)
-    }, [])
-
     const [state, dispatch] = useReducer((state, action) => {
         switch (action.type) {
+            case 'update':
+                return {
+                    ...action.value,
+                }
             case 'toggle':
                 return {
                     ...state,
+                    isSet: 1,
                     [action.value]: !state[action.value],
                 }
             case 'accept':
                 return {
                     ...state,
+                    isSet: 1,
                     [action.value]: true,
                 }
             case 'decline':
                 return {
                     ...state,
+                    isSet: 1,
                     [action.value]: false,
                 }
             case 'acceptAll':
@@ -52,7 +49,10 @@ const CookieConsentProvider = ({ children }) => {
                 }
             case 'declineAll':
                 setPopupIsOpen(false)
-                return initial
+                return {
+                    ...state,
+                    isSet: 1,
+                }
             case 'hideManageCookiePopup':
                 setManagePopupIsOpen(false)
                 return state
@@ -68,11 +68,27 @@ const CookieConsentProvider = ({ children }) => {
             default:
                 throw new Error()
         }
-    }, initialCookieValue)
+    }, cookieValue)
+
+    useEffect(() => {
+        function getCookie() {
+            const regex = new RegExp(`(?:(?:^|.*;\\s*)${COOKIE_NAME}\\s*\\=\\s*([^;]*).*$)|^.*$`)
+            const cookie = document.cookie.replace(regex, "$1")
+            return cookie.length ? JSON.parse(cookie) : initial
+        }
+        const v = getCookie()
+        dispatch({type:'update', value: v})
+        setPopupIsOpen(v.isSet === 0)
+    }, [])
 
     // Update the cookie when state changes
     useEffect(() => {
-        document.cookie = `${COOKIE_NAME}=${JSON.stringify(state)}`
+        if( !isInitialRender ) {
+            document.cookie = `${COOKIE_NAME}=${JSON.stringify(state)}`
+            setCookieValue(state)
+        } else {
+            setIsInitialRender(false)
+        }
     }, [state])
 
     return (

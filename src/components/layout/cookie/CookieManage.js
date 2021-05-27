@@ -7,7 +7,6 @@ import {useCookieConsentState} from "./CookieConsent"
 
 const CookieManage = ({dispatch}) => {
     const cookieConsentState = useCookieConsentState()
-
     function onManage() {
         dispatch({type: 'hideCookiePopup'})
         dispatch({type: 'hideManageCookiePopup'})
@@ -22,14 +21,14 @@ const CookieManage = ({dispatch}) => {
                     </Title>
                     <p className={"leading-relaxed"}>{data.consent.customize.content}</p>
                 </div>
-                <ul className={"border border-gray px-8 py-3"}>
+                <ul className={"border border-gray px-8 py-3"} data-consentisset={cookieConsentState.isSet}>
                     {data.consent.services.map((el,i) => (
                         <li key={i} className={"flex py-3 items-center justify-between"}>
-                        <span>
-                            {el.label}
-                        </span>
+                            <span>
+                                {el.label}
+                            </span>
                             <Switcher
-                                value={cookieConsentState[el.id]}
+                                value={cookieConsentState.isSet === 2 || cookieConsentState[el.id]}
                                 clickHandler={() => dispatch({type: 'toggle', value: el.id})}
                             />
                         </li>

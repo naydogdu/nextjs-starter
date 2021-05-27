@@ -5,7 +5,6 @@ import {useCookieConsentState} from "./cookie/CookieConsent"
 
 const Head = (props) => {
     const cookieConsentState = useCookieConsentState()
-
     const title = props.title || text.app?.siteName
     const desc = props.description || text.app?.description
 
