@@ -5,8 +5,23 @@
         "gaId": "X-XXX"
     },
     "consent": {
-        "button": "I accept",
-        "content": "By continuing your navigation, you accept the deposit of third-party cookies intended to offer you sharing buttons, platform content feedback social."
+        "accept": "Accept all",
+        "content": "By continuing your navigation, you accept the deposit of third-party cookies intended to offer you sharing buttons, platform content feedback social.",
+        "decline": "Decline all",
+        "manage": "Manage",
+        "more": "Read more",
+        "customize": {
+            "menuTitle": "Cookie settings",
+            "title": "Manage your settings",
+            "content": "Manage your cookie deposit settings.",
+            "validate": "Validate"
+        },
+        "services": [
+            {
+                "id": "marketing",
+                "label": "Google Analytics"
+            }
+        ]
     },
     "followTitle": "Follow us",
     "fourZeroFour": {
@@ -22,6 +37,9 @@
     "post": {
         "nextPost": "Next post",
         "previousPost": "Previous post"
+    },
+    "switcher": {
+        "label": "Validate"
     },
     "viewMore": "Read more"
 }

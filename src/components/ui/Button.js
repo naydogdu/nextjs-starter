@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import Link from "next/link"
 
-const baseClasses = "group inline-flex items-center space-x-2 uppercase py-2 px-6 transition-all duration-300 ease-in hover:space-x-3 focus:ring-2"
+const baseClasses = "group inline-flex items-center space-x-2 uppercase py-2 px-4 transition-all duration-300 ease-in hover:space-x-3 focus:ring-2"
 
 const sizeMap = [
     'text-sm font-bold leading-none',

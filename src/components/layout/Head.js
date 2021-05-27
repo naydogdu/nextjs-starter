@@ -1,8 +1,11 @@
 import {default as NextHead} from 'next/head'
 import text from "../../../content/main.json"
 import { GA_TRACKING_ID } from '../../utils/gtag'
+import {useCookieConsentState} from "./cookie/CookieConsent"
 
 const Head = (props) => {
+    const cookieConsentState = useCookieConsentState()
+
     const title = props.title || text.app?.siteName
     const desc = props.description || text.app?.description
 
@@ -26,7 +29,7 @@ const Head = (props) => {
                     <meta name="twitter:description" content={desc} />
                 </>
             }
-            {props.cookieConsent &&
+            {(cookieConsentState.isSet > 1 || cookieConsentState.marketing) &&
                 <>
                     <script
                         async

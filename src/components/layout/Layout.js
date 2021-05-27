@@ -1,20 +1,17 @@
-import React, {useState} from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import Header from "./Header"
 import Footer from "./Footer"
 import Head from "./Head"
-import GDPR from "./GDPR"
-import {getCookieConsentValue} from "react-cookie-consent"
 import Loader from "../ui/Loader"
+import {CookieConsentProvider} from "./cookie/CookieConsent"
 
 const Layout = (props) => {
-    const initialConsentValue = getCookieConsentValue('GdprConsent')
-    const [consentValue, setConsentValue] = useState(initialConsentValue)
     const seo = props.seo ? props.seo : { title: props.title?.replace(/(<([^>]+)>)/gi, "") }
 
     return (
-        <>
-            <Head {...seo} cookieConsent={consentValue} />
+        <CookieConsentProvider>
+            <Head {...seo} />
             <Loader />
             <div className="relative text-black bg-white font-normal antialiased scroll-smooth">
                 <Header />
@@ -23,8 +20,7 @@ const Layout = (props) => {
                 </main>
                 <Footer />
             </div>
-            <GDPR clickHandler={() => setConsentValue(true)} />
-        </>
+        </CookieConsentProvider>
     )
 }
 
