@@ -2,7 +2,8 @@
     "app": {
         "description": "A simple Next.js starter",
         "siteName": "Next JS",
-        "gaId": "X-XXX"
+        "gaId": "X-XXX",
+        "banner": "/static/images/banner.jpg"
     },
     "consent": {
         "accept": "Accept all",
