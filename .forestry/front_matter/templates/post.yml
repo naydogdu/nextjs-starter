@@ -4,23 +4,27 @@ hide_body: false
 fields:
 - type: datetime
   name: date
-  label: date
+  label: Date
+  config:
+    date_format: DD/MM/YYYY
+    export_format: YYYY-MM-DDTHH:mm
+    time_format: HH:mm
+  default: now
 - type: text
   name: title
-  label: title
+  label: Post title
 - type: text
   name: preview
-  label: preview
+  label: Preview
 - type: boolean
   name: private
-  label: private
+  label: Private ?
 - type: field_group
   name: seo
-  label: seo
+  label: SEO
   fields:
-  - type: text
-    name: title
-    label: title
-  - type: text
-    name: description
-    label: description
+  - name: seo
+    type: include
+    config: {}
+    template: seo
+    label: SEO
