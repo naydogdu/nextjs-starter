@@ -3,7 +3,29 @@ new_page_extension: md
 auto_deploy: false
 admin_path: 
 webhook_url: 
-sections: 
+sections:
+- type: directory
+  path: content/news
+  label: Posts
+  create: documents
+  match: "**/*"
+- type: directory
+  path: content/pages
+  label: Pages
+  create: documents
+  match: "**/*"
+  templates:
+  - page
+- type: heading
+  label: Tools
+- type: document
+  path: content/nav.json
+  label: Menus
+  match: "**/*"
+- type: document
+  path: content/main.json
+  label: Texts & Settings
+  match: "**/*"
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
