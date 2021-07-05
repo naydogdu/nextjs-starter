@@ -21,11 +21,9 @@ sections:
 - type: document
   path: content/nav.json
   label: Menus
-  match: "**/*"
 - type: document
   path: content/main.json
   label: Texts & Settings
-  match: "**/*"
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
