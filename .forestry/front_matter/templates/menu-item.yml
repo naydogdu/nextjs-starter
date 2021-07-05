@@ -16,3 +16,8 @@ fields:
 - name: blank
   type: boolean
   label: New tab ?
+- name: icon
+  type: file
+  config:
+    maxSize: 64
+  label: Icon
