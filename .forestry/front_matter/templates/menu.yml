@@ -2,7 +2,7 @@
 label: Menu
 hide_body: true
 fields:
-- name: main
+- name: primary
   type: field_group
   config: {}
   fields:
@@ -45,11 +45,6 @@ fields:
   - name: items
     type: field_group_list
     fields:
-    - name: icon
-      type: file
-      config:
-        maxSize: 64
-      label: Icon
     - name: item
       type: include
       config: {}
