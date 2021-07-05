@@ -61,5 +61,3 @@ fields:
       labelField: label
     label: Items
   label: Social networks
-pages:
-- content/nav.json
