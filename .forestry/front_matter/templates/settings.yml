@@ -1,0 +1,115 @@
+---
+label: Settings
+hide_body: true
+fields:
+- type: field_group
+  name: app
+  label: App
+  fields:
+  - type: text
+    name: siteName
+    label: App name
+  - type: text
+    name: description
+    label: Description
+  - type: file
+    name: banner
+    label: App Image
+  - type: text
+    name: gaId
+    label: Gtag ID
+    description: Google Tag ID
+- type: field_group
+  name: consent
+  label: GDPR
+  fields:
+  - type: text
+    name: accept
+    label: accept
+  - type: textarea
+    name: content
+    label: content
+  - type: text
+    name: decline
+    label: decline
+  - type: text
+    name: manage
+    label: manage
+  - type: text
+    name: more
+    label: more
+  - type: field_group
+    name: customize
+    label: customize
+    fields:
+    - type: text
+      name: menuTitle
+      label: menuTitle
+    - type: text
+      name: title
+      label: title
+    - type: text
+      name: content
+      label: content
+    - type: text
+      name: validate
+      label: validate
+  - type: field_group_list
+    name: services
+    label: services
+    fields:
+    - type: text
+      name: id
+      label: id
+    - type: text
+      name: label
+      label: label
+- type: field_group
+  name: fourZeroFour
+  label: '404'
+  fields:
+  - type: text
+    name: title
+    label: title
+  - type: text
+    name: content
+    label: content
+  - type: text
+    name: cta
+    label: cta
+  - type: text
+    name: metaTitle
+    label: metaTitle
+- type: field_group
+  name: menu
+  label: menu
+  fields:
+  - type: text
+    name: closeLabel
+    label: closeLabel
+  - type: text
+    name: openLabel
+    label: openLabel
+- type: field_group
+  name: post
+  label: post
+  fields:
+  - type: text
+    name: nextPost
+    label: nextPost
+  - type: text
+    name: previousPost
+    label: previousPost
+- type: field_group
+  name: switcher
+  label: switcher
+  fields:
+  - type: text
+    name: label
+    label: label
+- type: text
+  name: followTitle
+  label: followTitle
+- type: text
+  name: viewMore
+  label: viewMore

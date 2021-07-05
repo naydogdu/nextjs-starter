@@ -1,0 +1,16 @@
+---
+label: SEO
+hide_body: true
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+  description: Title Meta tag
+- name: description
+  type: text
+  config:
+    required: false
+  label: Description
+  description: Description Meta tag

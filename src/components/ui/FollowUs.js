@@ -21,7 +21,7 @@ const FollowUs = (props) => {
             }
             <li>
                 <ul className={["flex items-center space-x-4", props.css].join(' ')}>
-                    {data.social?.map((el,i) => (
+                    {data.social?.items?.map((el,i) => (
                         <NavItem
                             key={i}
                             href={el.url}

@@ -6,7 +6,7 @@ import PropTypes from "prop-types"
 const FooterNav = (props) => (
     <nav className={props.css}>
         <ul className={"flex -mx-2"}>
-            {data.footer?.map((el,i) => (
+            {data.footer?.items?.map((el,i) => (
                 <NavItem
                     key={i}
                     href={el.url}

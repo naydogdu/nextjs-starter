@@ -1,0 +1,34 @@
+---
+label: CTA
+hide_body: true
+fields:
+- name: href
+  type: text
+  config:
+    required: false
+  label: URL
+- name: children
+  type: text
+  config:
+    required: false
+  label: Label
+- name: blank
+  type: boolean
+  label: New tab ?
+- name: theme
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - primary
+    - secondary
+    - gray
+    - white
+    - wide
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Theme

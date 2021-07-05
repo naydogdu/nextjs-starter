@@ -12,7 +12,7 @@ export default function Post({post}) {
     return (
         <Layout seo={post?.seo}>
             <Container>
-                <Title level={1} size={1}>{post.title}</Title>
+                <Title level={1} size={1}>{Parser(post.title)}</Title>
                 <div className={"prose py-8"}>
                     {Parser(post.content)}
                 </div>

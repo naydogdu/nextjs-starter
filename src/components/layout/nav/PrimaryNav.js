@@ -24,7 +24,7 @@ const PrimaryNav = (props) => {
                 "space-y-10 lg:flex flex-col lg:space-y-0 lg:flex-row lg:space-x-4 xl:space-x-6",
                 (navbarOpen ? "fixed sm:min-w-120 pt-32 top-0 right-0 pl-24 h-screen pr-8 flex flex-col justify-center overflow-y-auto bg-white shadow-xl" : "hidden"),
             ].join(' ')}>
-                {navData.primary?.map((el,i) => (
+                {navData.primary?.items?.map((el,i) => (
                     <NavItem
                         key={i}
                         href={el.url}
