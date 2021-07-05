@@ -5,6 +5,7 @@ description:
 private: false
 seo:
   title: Page title
+preview: Test preview
 
 ---
 Mauris eleifend nunc ac lectus euismod, sed ornare quam semper. Pellentesque ultrices mollis bibendum. Morbi congue risus sit amet laoreet placerat. Maecenas finibus eros eget erat consequat malesuada. Donec ut urna est. Donec lacinia, nisi sit amet venenatis scelerisque, ante ante dignissim enim, id lacinia elit urna id est. Quisque rhoncus malesuada erat malesuada aliquam.
