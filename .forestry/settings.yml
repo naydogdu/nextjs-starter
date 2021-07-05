@@ -15,7 +15,7 @@ sections:
   create: documents
   match: "**/*"
   templates:
-  - page
+  - post
 - type: heading
   label: Tools
 - type: document
