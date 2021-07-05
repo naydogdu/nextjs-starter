@@ -52,7 +52,7 @@ Button.propTypes = {
 
 const LinkButton = (props) => {
     const computeSize = sizeMap[props?.size] ? sizeMap[props.size] : sizeMap[0]
-    const computeColor = colorMap[props?.theme] ? colorMap[props.theme] : colorMap['primary']
+    const computeColor = colorMap[props?.theme] ? colorMap[props.theme] : colorMap.primary
     const computeTarget = props?.target ? '_blank' : null
     const computeRel = props?.target ? 'noopener noreferrer' : null
 

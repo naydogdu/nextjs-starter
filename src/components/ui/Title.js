@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import {computeTextColor} from "../../utils/theme"
 
 const Title = ({ ...props }) => {
     const Level = `h${ props.level }`
@@ -13,18 +14,9 @@ const Title = ({ ...props }) => {
     ]
     const computeSize = sizeMap[props.size] ? sizeMap[props.size] : sizeMap[0]
 
-    const colorMap = {
-        white: 'text-white',
-        primary: 'text-primary',
-        secondary: 'text-secondary',
-        gray: 'text-gray',
-        black: 'text-black',
-    }
-    const computeColor = colorMap[props.color] ? colorMap[props.color] : colorMap.primary
-
     return (
         <header className={props.css} style={props.style}>
-            <Level className={[computeColor, computeSize, props.hnCss].join(' ')}>
+            <Level className={[computeTextColor(props.color), computeSize, props.hnCss].join(' ')}>
                 { props.children }
             </Level>
         </header>

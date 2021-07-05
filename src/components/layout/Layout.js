@@ -15,7 +15,7 @@ const Layout = (props) => {
             <Loader />
             <div className="relative text-black bg-white font-normal antialiased scroll-smooth">
                 <Header />
-                <main className={["leading-relaxed"].join(' ')}>
+                <main className={["leading-relaxed", props.mainCss].join(' ')}>
                     {props.children}
                 </main>
                 <Footer />
@@ -27,6 +27,7 @@ const Layout = (props) => {
 Layout.propTypes = {
     children: PropTypes.node.isRequired,
     title: PropTypes.string,
+    mainCss: PropTypes.string,
 }
 
 export default Layout

@@ -1,0 +1,38 @@
+{
+    "primary": [
+        {
+            "label": "Home",
+            "url": "/",
+            "blank": false,
+            "icon": ""
+        },
+        {
+            "label": "News",
+            "url": "/news",
+            "blank": false,
+            "icon": ""
+        }
+    ],
+    "footer": [
+        {
+            "label": "Home",
+            "url": "/",
+            "blank": false,
+            "icon": ""
+        }
+    ],
+    "social": [
+        {
+            "label": "Facebook",
+            "url": "https://www.facebook.com/",
+            "blank": true,
+            "icon": "/static/images/facebook.svg"
+        },
+        {
+            "label": "Twitter",
+            "url": "https://twitter.com/",
+            "blank": true,
+            "icon": "/static/images/twitter.svg"
+        }
+    ]
+}

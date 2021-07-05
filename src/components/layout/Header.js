@@ -18,11 +18,9 @@ const Header = () => {
 
     return (
         <header className={[
-                    "sticky top-0 z-10 transition-all duration-150 ease-in",
-                    (sticked > 0 ? "bg-white shadow" : null),
-                ].join(' ')}
-                data-sticked={sticked > 0 ? true : null}
-        >
+            "sticky top-0 z-10 transition-all duration-150 ease-in",
+            (sticked > 0 ? "bg-white shadow" : null),
+        ].join(' ')}>
             <Container css={[
                 "flex items-center justify-between transition-all duration-150 ease-in",
                 (sticked > 0 ? "py-4" : "py-8")
