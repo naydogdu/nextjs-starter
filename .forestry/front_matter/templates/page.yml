@@ -20,3 +20,13 @@ fields:
   name: description
   label: Excerpt
   description: Short preview
+- name: seo
+  type: field_group
+  config: {}
+  fields:
+  - name: seo
+    type: include
+    config: {}
+    template: seo
+    label: SEO
+  label: SEO
