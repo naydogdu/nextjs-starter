@@ -2,14 +2,15 @@ import fs from 'fs'
 import { join } from 'path'
 import matter from "gray-matter"
 
-const pagesDirectory = join(process.cwd(), 'content/pages')
-const postsDirectory = join(process.cwd(), 'content/news')
-const directories = {
+export const commonFields = ['title', 'preview', 'date', 'slug', 'private', 'content', 'seo']
+export const pagesDirectory = join(process.cwd(), 'content/pages')
+export const postsDirectory = join(process.cwd(), 'content/news')
+export const directories = {
     'page': pagesDirectory,
     'post': postsDirectory,
 }
 
-export function getContentBySlug(type, slug, fields = []) {
+export function getContentBySlug(type, slug, fields = commonFields) {
     const path = directories[type] || directories['post']
     const realSlug = slug?.replace(/\.md$/, '')
     const fullPath = join(path, `${realSlug}.md`)

@@ -1,17 +1,12 @@
 import fs from 'fs'
-import { join } from 'path'
-import {getContentBySlug} from "./common"
-
-const postsDirectory = join(process.cwd(), 'content/news')
-const postsFields = ['title', 'preview', 'date', 'slug', 'private', 'content']
+import {getContentBySlug, commonFields, postsDirectory} from "./common"
 
 export function getPostSlugs() {
     return fs.readdirSync(postsDirectory)
 }
 
-export function getAllPosts(fields = postsFields) {
+export function getAllPosts(fields = commonFields) {
     const slugs = getPostSlugs()
-
     const posts = slugs.map((slug) => getContentBySlug('post', slug, fields))
     const filtered = posts.filter((item) => !item.private)
         .sort((post1, post2) => (post1.date > post2.date ? '-1' : '1'))
@@ -20,15 +15,8 @@ export function getAllPosts(fields = postsFields) {
 }
 
 export function getLatestPosts(number = 3) {
-    const slugs = getPostSlugs()
-    const posts = slugs.map(
-        (slug) => getContentBySlug('post', slug, postsFields)
-    )
-
-    const filtered = posts.filter((item) => !item.private)
-        .sort((post1, post2) => (post1.date > post2.date ? '-1' : '1'))
-
-    return filtered.slice(0,number)
+    const all = getAllPosts()
+    return all.slice(0,number)
 }
 
 export function getAdjacentPosts(slug) {
