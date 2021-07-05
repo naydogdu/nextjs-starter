@@ -4,23 +4,24 @@ hide_body: true
 fields:
 - type: field_group
   name: app
-  label: app
+  label: App
   fields:
   - type: text
-    name: description
-    label: description
-  - type: text
     name: siteName
-    label: siteName
+    label: App name
   - type: text
-    name: gaId
-    label: gaId
+    name: description
+    label: Description
   - type: file
     name: banner
-    label: banner
+    label: App Image
+  - type: text
+    name: gaId
+    label: Gtag ID
+    description: Google Tag ID
 - type: field_group
   name: consent
-  label: consent
+  label: GDPR
   fields:
   - type: text
     name: accept
@@ -63,12 +64,9 @@ fields:
     - type: text
       name: label
       label: label
-- type: text
-  name: followTitle
-  label: followTitle
 - type: field_group
   name: fourZeroFour
-  label: fourZeroFour
+  label: '404'
   fields:
   - type: text
     name: title
@@ -109,6 +107,9 @@ fields:
   - type: text
     name: label
     label: label
+- type: text
+  name: followTitle
+  label: followTitle
 - type: text
   name: viewMore
   label: viewMore
