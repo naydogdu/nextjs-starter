@@ -4,7 +4,7 @@ hide_body: false
 fields:
 - type: datetime
   name: date
-  label: Date
+  label: Publication date
   config:
     date_format: DD/MM/YYYY
     export_format: YYYY-MM-DDTHH:mm
