@@ -1,0 +1,65 @@
+---
+label: Menu
+hide_body: true
+fields:
+- name: main
+  type: field_group
+  config: {}
+  fields:
+  - name: items
+    type: field_group_list
+    fields:
+    - name: item
+      type: include
+      config: {}
+      template: menu-item
+      label: Item
+    config:
+      min: 
+      max: 
+      labelField: label
+    label: Items
+  label: Primary navigation
+- name: footer
+  type: field_group
+  config: {}
+  fields:
+  - name: items
+    type: field_group_list
+    fields:
+    - name: item
+      type: include
+      config: {}
+      template: menu-item
+      label: Item
+    config:
+      min: 
+      max: 
+      labelField: label
+    label: Items
+  label: Footer navigation
+- name: social
+  type: field_group
+  config: {}
+  fields:
+  - name: items
+    type: field_group_list
+    fields:
+    - name: icon
+      type: file
+      config:
+        maxSize: 64
+      label: Icon
+    - name: item
+      type: include
+      config: {}
+      template: menu-item
+      label: Item
+    config:
+      min: 
+      max: 
+      labelField: label
+    label: Items
+  label: Social networks
+pages:
+- content/nav.json

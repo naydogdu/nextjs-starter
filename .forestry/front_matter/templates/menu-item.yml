@@ -1,0 +1,18 @@
+---
+label: Menu item
+hide_body: true
+fields:
+- name: label
+  type: text
+  config:
+    required: false
+  label: Label
+- name: url
+  type: text
+  config:
+    required: false
+  label: URL
+  default: "/"
+- name: blank
+  type: boolean
+  label: New tab ?
