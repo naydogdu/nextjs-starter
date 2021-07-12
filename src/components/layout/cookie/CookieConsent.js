@@ -1,8 +1,11 @@
+import data from "../../../../content/main.json"
+
 import React, { createContext, useReducer, useEffect, useState, useContext } from 'react'
 import CookiePopin from './CookiePopin'
 import CookieManage from "./CookieManage"
+import slugify from "../../../utils/slugify"
 
-const COOKIE_NAME = 'consent'
+const COOKIE_NAME = `consent_${slugify(data.app.siteName)}`
 const initial = {
     isSet: 0,
     marketing: 0
