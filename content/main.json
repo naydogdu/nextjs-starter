@@ -11,6 +11,7 @@
         "decline": "Decline all",
         "manage": "Manage",
         "more": "Read more",
+        "moreLink": "/",
         "customize": {
             "menuTitle": "Cookie settings",
             "title": "Manage your settings",

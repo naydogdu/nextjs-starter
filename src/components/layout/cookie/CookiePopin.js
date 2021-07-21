@@ -8,7 +8,11 @@ const CookiePopin = ({dispatch}) => (
         <p className={"text-sm leading-relaxed"}>
             {data.consent?.content}
             {" "}
-            <Link href={"/"}><strong>{data.consent?.more}</strong></Link>
+            {data.consent?.moreLink &&
+                <Link href={data.consent.moreLink}>
+                    <a><strong>{data.consent?.more}</strong></a>
+                </Link>
+            }
         </p>
         <span className={"flex-shrink-0"}>
             <Button clickHandler={() => dispatch({type: 'acceptAll'})}>{data.consent?.accept}</Button>
