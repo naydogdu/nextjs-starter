@@ -27,8 +27,8 @@ https://nextjs.org/
 Tailwind CSS
 https://tailwindcss.com/
 
-React Spring
-https://www.react-spring.io/
+Framer Motion
+https://www.framer.com/motion/
 
 Forestry
 https://forestry.io/
