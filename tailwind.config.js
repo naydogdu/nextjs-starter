@@ -6,7 +6,7 @@ module.exports = {
   purge: [
     './content/**/*.json',
     './pages/**/*.js',
-    './src/**/*.js',
+    './src/**/*.{js,svg}',
   ],
   theme: {
     screens: {
