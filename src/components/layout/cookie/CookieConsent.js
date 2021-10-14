@@ -87,7 +87,7 @@ const CookieConsentProvider = ({ children }) => {
     // Update the cookie when state changes
     useEffect(() => {
         if( !isInitialRender ) {
-            document.cookie = `${COOKIE_NAME}=${JSON.stringify(state)}; max-age=12000000;`
+            document.cookie = `${COOKIE_NAME}=${JSON.stringify(state)}; max-age=12000000;path=/;`
             setCookieValue(state)
         } else {
             setIsInitialRender(false)

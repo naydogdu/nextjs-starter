@@ -3,6 +3,7 @@
         "description": "A simple Next.js starter",
         "siteName": "Next JS",
         "gaId": "X-XXX",
+        "activeGa": false,
         "banner": "/static/images/banner.jpg"
     },
     "consent": {
