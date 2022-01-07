@@ -7,7 +7,7 @@ export const bgColorMap = {
 }
 
 export const computeBgColor = (k) => {
-    return bgColorMap[k] ? bgColorMap[k] : bgColorMap.primary
+    return bgColorMap[k] ? bgColorMap[k] : ''
 }
 
 export const textColorMap = {
@@ -19,5 +19,5 @@ export const textColorMap = {
 }
 
 export const computeTextColor = (k) => {
-    return textColorMap[k] ? textColorMap[k] : textColorMap.primary
+    return textColorMap[k] ? textColorMap[k] : ''
 }

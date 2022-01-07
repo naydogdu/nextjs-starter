@@ -26,7 +26,7 @@ const Title = ({ ...props }) => {
 Title.defaultProps = {
     level: 2,
     size: 2,
-    color: `primary`,
+    color: ``,
     css: ``,
     hnCss: ``,
     style: {}
