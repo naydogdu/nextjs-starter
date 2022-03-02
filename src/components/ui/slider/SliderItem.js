@@ -1,7 +1,6 @@
 import Rolling from "../../../images/rolling.svg"
 
 const SliderItem = props => {
-    console.log('SliderItem.props', props)
 
     return (
         <li
