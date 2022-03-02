@@ -18,18 +18,18 @@ const Header = () => {
 
     return (
         <header className={[
-            "sticky top-0 z-10 transition-all duration-150 ease-in",
+            "sticky -top-16 z-10 transition-all duration-150 ease-in",
             (sticked > 0 ? "bg-white shadow" : null),
         ].join(' ')}>
             <Container css={[
                 "flex items-center justify-between transition-all duration-150 ease-in",
-                (sticked > 0 ? "py-4" : "py-8")
+                (sticked > 0 ? "pb-4 pt-20" : "py-8")
             ].join(' ')}>
                 <Link href={"/"}>
                     <a className={"block relative z-10"} title={""}>
                         <Logo className={[
-                            "w-auto hover:opacity-75",
-                            (sticked > 0 ? "h-12" : "h-20"),
+                            "w-auto transition-all hover:opacity-75",
+                            (sticked > 0 ? "h-12 delay-150" : "h-20"),
                         ].join(' ')} />
                     </a>
                 </Link>
