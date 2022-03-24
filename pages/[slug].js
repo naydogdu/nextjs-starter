@@ -17,10 +17,10 @@ export default function Page({ page }) {
     return (
         <Layout seo={page?.seo}>
             <Container>
-                <Title level={1} size={1}>
-                    {Parser(page.title)}
-                </Title>
-                {page.content &&
+                {page?.title &&
+                    <Title level={1} size={1} children={Parser(page.title)} />
+                }
+                {page?.content &&
                     <div className={"prose py-8"}>
                         {Parser(page.content)}
                     </div>
@@ -32,7 +32,7 @@ export default function Page({ page }) {
 
 export async function getStaticProps({ params }) {
     const page = getContentBySlug('page', params.slug, ['title', 'slug', 'preview', 'date', 'content', 'seo'])
-    const content = await markdownToHtml(page.content || '')
+    const content = page?.content ? await markdownToHtml(page?.content) : ''
 
     return {
         props: {

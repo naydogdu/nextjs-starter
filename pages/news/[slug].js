@@ -30,7 +30,7 @@ export async function getStaticProps({ params }) {
         params.slug,
         ['title', 'slug', 'preview', 'date', 'content', 'seo']
     )
-    const content = await markdownToHtml(page.content || '')
+    const content = page?.content ? await markdownToHtml(page?.content) : ''
     const adjacent = getAdjacentPosts(params.slug)
 
     return {

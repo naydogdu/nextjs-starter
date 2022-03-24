@@ -8,7 +8,7 @@ export function getPostSlugs() {
 export function getAllPosts(fields = commonFields) {
     const slugs = getPostSlugs()
     const posts = slugs.map((slug) => getContentBySlug('post', slug, fields))
-    const filtered = posts.filter((item) => !item.private)
+    const filtered = posts?.filter((item) => !item.private)
         .sort((post1, post2) => (post1.date > post2.date ? '-1' : '1'))
 
     return filtered
@@ -23,7 +23,7 @@ export function getAdjacentPosts(slug) {
     const all = getAllPosts()
 
     let prev, next
-    all.find((obj,i) => {
+    all?.find((obj,i) => {
         next = all[i-1] || null
         prev = all[i+1] || null
 

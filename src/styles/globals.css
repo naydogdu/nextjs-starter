@@ -2,14 +2,8 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@import "./break.css";
 @import "./fonts.css";
 @import "./cursors.css";
-@import "./filters.css";
 @import "./misc.css";
-@import "./scroll-snap.css";
-@import "./text-decoration.css";
 
 @import "./prose.css";
-
-@import "./responsive.css";

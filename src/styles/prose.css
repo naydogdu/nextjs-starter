@@ -18,11 +18,11 @@
         }
 
         & h2 {
-            @apply text-4xl leading-tighter font-bold;
+            @apply text-4xl font-bold;
         }
 
         & h3 {
-            @apply text-2xl leading-tighter font-bold;
+            @apply text-2xl font-bold;
         }
 
         & a:not([class]) {
