@@ -12,6 +12,7 @@ const Layout = (props) => {
     return (
         <CookieConsentProvider>
             <Head {...seo} />
+            <GA id={"gtag"} />
             <Loader />
             <div className="relative text-black bg-white font-normal antialiased scroll-smooth min-h-screen flex flex-col">
                 <Header />
