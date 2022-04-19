@@ -2,6 +2,7 @@ import {default as NextHead} from 'next/head'
 import text from "../../../content/main.json"
 import { GA_TRACKING_ID } from '../../utils/gtag'
 import {useCookieConsentState} from "./cookie/CookieConsent"
+import Script from 'next/script'
 
 const Head = (props) => {
     const url = process.env.NEXT_PUBLIC_SITE_URL
@@ -43,13 +44,10 @@ const Head = (props) => {
             <meta property="twitter:image" content={image} />
 
             {text.app.activeGa &&
-                <script
-                    async
-                    src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-                />
+                <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
             }
             {(text.app.activeGa && (cookieConsentState.isSet > 1 || cookieConsentState.marketing)) &&
-                <script
+                <Script
                     dangerouslySetInnerHTML={{
                         __html: `
                             window.dataLayer = window.dataLayer || [];
