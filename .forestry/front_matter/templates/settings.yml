@@ -15,10 +15,16 @@ fields:
   - type: file
     name: banner
     label: App Image
+  - name: activeGa
+    type: boolean
+    label: Activer Google Analytics
   - type: text
     name: gaId
     label: Gtag ID
     description: Google Tag ID
+    showOnly:
+      field: activeGa
+      value: true
 - type: field_group
   name: consent
   label: GDPR
