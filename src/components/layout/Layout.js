@@ -5,6 +5,7 @@ import Footer from "./Footer"
 import Head from "./Head"
 import Loader from "../ui/Loader"
 import {CookieConsentProvider} from "./cookie/CookieConsent"
+import GA from "./GA"
 
 const Layout = (props) => {
     const seo = props.seo ? props.seo : { title: props.title?.replace(/(<([^>]+)>)/gi, "") }
