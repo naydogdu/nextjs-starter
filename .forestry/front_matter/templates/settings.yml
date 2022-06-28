@@ -119,3 +119,19 @@ fields:
 - type: text
   name: viewMore
   label: viewMore
+- name: forms
+  type: field_group
+  config: {}
+  fields:
+  - name: recipients
+    type: tag_list
+    default: []
+    description: Emails des destinataires
+    label: Destinataires
+  - name: subject
+    type: text
+    config:
+      required: false
+    label: Sujet par défaut
+    description: Sujet utilisé par défaut pour tous les mails sortants
+  label: Formulaires
