@@ -1,0 +1,26 @@
+[
+    {
+        "label": "Your first name"
+    },
+    {
+        "type": "select",
+        "required": true,
+        "name": "select-sample",
+        "placeholder": "Select one",
+        "options": [
+            "Simple string option",
+            {
+                "label": "First choice",
+                "value": "First choice"
+            },
+            {
+                "label": "Second choice",
+                "value": "Second choice"
+            }
+        ]
+    },
+    {
+        "placeholder": "Your last name",
+        "required": true
+    }
+]
