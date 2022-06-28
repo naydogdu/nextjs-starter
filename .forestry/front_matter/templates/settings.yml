@@ -135,3 +135,5 @@ fields:
     label: Sujet par défaut
     description: Sujet utilisé par défaut pour tous les mails sortants
   label: Formulaires
+pages:
+- content/main.json

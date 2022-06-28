@@ -1,48 +1,54 @@
 {
-    "app": {
-        "description": "A simple Next.js starter",
-        "siteName": "Next JS",
-        "gaId": "X-XXX",
-        "activeGa": false,
-        "banner": "/static/images/banner.jpg"
+  "app": {
+    "description": "A simple Next.js starter",
+    "siteName": "Next JS",
+    "gaId": "X-XXX",
+    "activeGa": false,
+    "banner": "/static/images/banner.jpg"
+  },
+  "consent": {
+    "accept": "Accept all",
+    "content": "By continuing your navigation, you accept the deposit of third-party cookies intended to offer you sharing buttons, platform content feedback social.",
+    "decline": "Decline all",
+    "manage": "Manage",
+    "more": "Read more",
+    "moreLink": "/",
+    "customize": {
+      "menuTitle": "Cookie settings",
+      "title": "Manage your settings",
+      "content": "Manage your cookie deposit settings.",
+      "validate": "Validate"
     },
-    "consent": {
-        "accept": "Accept all",
-        "content": "By continuing your navigation, you accept the deposit of third-party cookies intended to offer you sharing buttons, platform content feedback social.",
-        "decline": "Decline all",
-        "manage": "Manage",
-        "more": "Read more",
-        "moreLink": "/",
-        "customize": {
-            "menuTitle": "Cookie settings",
-            "title": "Manage your settings",
-            "content": "Manage your cookie deposit settings.",
-            "validate": "Validate"
-        },
-        "services": [
-            {
-                "id": "marketing",
-                "label": "Google Analytics"
-            }
-        ]
-    },
-    "followTitle": "Follow us",
-    "fourZeroFour": {
-        "title": "404",
-        "content": "This page could not be found.",
-        "cta": "Back to the home page",
-        "metaTitle": "404 / Page not found"
-    },
-    "menu": {
-        "closeLabel": "Close menu",
-        "openLabel": "Open menu"
-    },
-    "post": {
-        "nextPost": "Next post",
-        "previousPost": "Previous post"
-    },
-    "switcher": {
-        "label": "Validate"
-    },
-    "viewMore": "Read more"
+    "services": [
+      {
+        "id": "marketing",
+        "label": "Google Analytics"
+      }
+    ]
+  },
+  "followTitle": "Follow us",
+  "fourZeroFour": {
+    "title": "404",
+    "content": "This page could not be found.",
+    "cta": "Back to the home page",
+    "metaTitle": "404 / Page not found"
+  },
+  "menu": {
+    "closeLabel": "Close menu",
+    "openLabel": "Open menu"
+  },
+  "post": {
+    "nextPost": "Next post",
+    "previousPost": "Previous post"
+  },
+  "switcher": {
+    "label": "Validate"
+  },
+  "viewMore": "Read more",
+  "forms": {
+    "recipients": [
+      "test@test.com"
+    ],
+    "subject": "You received a new message"
+  }
 }
