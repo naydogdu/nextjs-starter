@@ -70,6 +70,22 @@ fields:
     - type: text
       name: label
       label: label
+- name: forms
+  type: field_group
+  config: {}
+  fields:
+  - name: recipients
+    type: tag_list
+    default: []
+    description: Recipients' emails
+    label: Recipients
+  - name: subject
+    type: text
+    config:
+      required: false
+    label: Subject (default)
+    description: Default subject
+  label: Forms
 - type: field_group
   name: fourZeroFour
   label: '404'
@@ -119,21 +135,5 @@ fields:
 - type: text
   name: viewMore
   label: viewMore
-- name: forms
-  type: field_group
-  config: {}
-  fields:
-  - name: recipients
-    type: tag_list
-    default: []
-    description: Emails des destinataires
-    label: Destinataires
-  - name: subject
-    type: text
-    config:
-      required: false
-    label: Sujet par défaut
-    description: Sujet utilisé par défaut pour tous les mails sortants
-  label: Formulaires
 pages:
 - content/main.json
