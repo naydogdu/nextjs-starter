@@ -104,7 +104,7 @@ fields:
     label: metaTitle
 - type: field_group
   name: menu
-  label: menu
+  label: Menu
   fields:
   - type: text
     name: closeLabel
@@ -114,7 +114,6 @@ fields:
     label: openLabel
 - type: field_group
   name: post
-  label: post
   fields:
   - type: text
     name: nextPost
@@ -122,18 +121,19 @@ fields:
   - type: text
     name: previousPost
     label: previousPost
+  label: Post navigation
 - type: field_group
   name: switcher
-  label: switcher
+  label: Switcher
   fields:
   - type: text
     name: label
     label: label
 - type: text
   name: followTitle
-  label: followTitle
+  label: Follow Title
 - type: text
   name: viewMore
-  label: viewMore
+  label: View More
 pages:
 - content/main.json
