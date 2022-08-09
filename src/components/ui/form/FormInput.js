@@ -10,6 +10,8 @@ const FormInput = (props) => {
             placeholder={[(props.placeholder || props.label || "-"), (props.required ? "*" : null)].join('')}
             name={slugify(props.name || props.label || props.placeholder)}
             required={props.required || null}
+            pattern={props.pattern || null}
+            title={props.title || null}
         />
     )
 }

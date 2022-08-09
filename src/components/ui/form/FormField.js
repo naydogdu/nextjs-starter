@@ -25,6 +25,8 @@ FormField.defaultProps = {
     placeholder: ``,
     css: ``,
     inputCss: ``,
+    pattern: ``,
+    title: ``,
 }
 
 FormField.propTypes = {
@@ -35,6 +37,8 @@ FormField.propTypes = {
     placeholder: PropTypes.string,
     css: PropTypes.string,
     inputCss: PropTypes.string,
+    pattern: PropTypes.string,
+    title: PropTypes.string,
 }
 
 export default FormField

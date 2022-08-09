@@ -22,5 +22,12 @@
     {
         "placeholder": "Your last name",
         "required": true
+    },
+    {
+        "type" : "tel",
+        "label": "Your phone",
+        "required": true,
+        "pattern": "[0-9]+",
+        "title" : "Please type a valid phone number"
     }
 ]

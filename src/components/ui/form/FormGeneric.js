@@ -19,7 +19,7 @@ const FormGeneric = props => {
             <div className={props.css}>
                 {props.children}
             </div>
-            {props.submit && <Button children={props.submit || "Send"} />}
+            <Button type={"submit"} children={props.submit || "Send"} />
         </form>
     )
 }
