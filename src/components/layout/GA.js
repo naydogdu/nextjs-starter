@@ -11,7 +11,7 @@ const GA = () => {
             {text.app.activeGa &&
                 <Script id={"g-tag"} src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
             }
-            {(text.app.activeGa && (cookieConsentState.isSet > 1 || cookieConsentState.marketing)) &&
+            {(text.app.activeGa && (cookieConsentState.isSet > 1 || cookieConsentState.marketing > 0)) &&
                 <Script
                     id={"g-tag-tracker"}
                     dangerouslySetInnerHTML={{
