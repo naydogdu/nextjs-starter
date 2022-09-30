@@ -117,7 +117,7 @@ const Slider = props => {
                                 mapItemCss.xl[columns.xl],
                                 props.css,
                             ].join(' ')}
-                            clickHandler={() => props.clickHandler ? props.clickHandler(i) : null}
+                            clickHandler={props.clickHandler ? () => props.clickHandler(i) : null}
                         />
                     ))}
                 </ul>
