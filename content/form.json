@@ -27,7 +27,7 @@
         "type" : "tel",
         "label": "Your phone",
         "required": true,
-        "pattern": "[0-9]+",
+        "pattern": "[0-9\\s\\+\\.\\-]*",
         "title" : "Please type a valid phone number"
     }
 ]
