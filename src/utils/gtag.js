@@ -1,6 +1,7 @@
 import data from "../../content/main.json"
 
 export const GA_TRACKING_ID = data.app?.gaId
+export const GTM_TRACKING_ID = data.app?.gtmId
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = (url) => {

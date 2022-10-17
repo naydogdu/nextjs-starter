@@ -4,6 +4,8 @@
     "siteName": "Next JS",
     "gaId": "X-XXX",
     "activeGa": false,
+    "gtmId": "GTM-XXXX",
+    "activeGtm": true,
     "banner": "/static/images/banner.jpg"
   },
   "consent": {

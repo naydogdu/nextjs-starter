@@ -13,7 +13,7 @@ const FormSelect = (props) => {
                 required={props.required || null}
                 onChange={e => props.onChange ? props.onChange(e.target.value) : null}
             >
-                {props.placeholder && <option disabled selected value={""} children={props.placeholder} />}
+                {props.placeholder && <option disabled defaultValue value={""} children={props.placeholder} />}
                 {props.options.map((el, x) => (
                     <option key={x} value={el.value || slugify(el)}>{el.label || el}</option>
                 ))}

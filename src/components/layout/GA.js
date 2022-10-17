@@ -1,6 +1,6 @@
 import text from "../../../content/main.json"
 import Script from "next/script"
-import {GA_TRACKING_ID} from "../../utils/gtag"
+import {GA_TRACKING_ID, GTM_TRACKING_ID} from "../../utils/gtag"
 import {useCookieConsentState} from "./cookie/CookieConsent"
 
 const GA = () => {
@@ -22,6 +22,20 @@ const GA = () => {
                             gtag('config', '${GA_TRACKING_ID}', {
                               page_path: window.location.pathname,
                             });
+                        `,
+                    }}
+                />
+            }
+            {(text.app?.activeGtm && (cookieConsentState.isSet > 1 || cookieConsentState.marketing > 0)) &&
+                <Script
+                    id={"gtm-tracker"}
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                            })(window,document,'script','dataLayer','${GTM_TRACKING_ID}');
                         `,
                     }}
                 />

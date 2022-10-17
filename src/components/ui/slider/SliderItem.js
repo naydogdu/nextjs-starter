@@ -8,7 +8,7 @@ const SliderItem = props => {
             style={props.style}
         >
             <button
-                className={["relative group w-full flex flex-col", props.clickHandler ? "hover:opacity-90" : ""].join(' ')}
+                className={["relative group w-full flex flex-col", props.clickHandler ? "hover:opacity-90" : "pointer-events-none"].join(' ')}
                 onClick={props.clickHandler || null}
             >
                 <Rolling className={"absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-24 h-24 text-primary"} />
