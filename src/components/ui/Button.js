@@ -1,31 +1,33 @@
 import PropTypes from "prop-types"
 import Link from "next/link"
 
-const baseClasses = "group inline-flex items-center space-x-2 uppercase py-2 px-4 transition-all duration-300 ease-in hover:space-x-3 focus:ring-2"
+const baseClasses = "group inline-flex items-center gap-2 uppercase transition-all duration-300 ease-in data-[disabled]:opacity-50 disabled:opacity-50 disabled:cursor-not-allowed data-[disabled]:cursor-not-allowed focus:ring-2"
 
 const sizeMap = [
-    'text-sm font-bold leading-none',
-    'text-xs font-medium leading-none',
-    'text-base font-bold leading-normal',
+    'text-xs font-medium leading-none py-2 px-4',
+    'text-sm font-bold leading-none py-2 px-4',
+    'text-base font-bold leading-normal py-3 px-6',
 ]
 
 const colorMap = {
-    primary: 'text-white bg-primary hover:bg-secondary focus:ring-secondary',
-    secondary: 'text-white bg-secondary hover:text-primary focus:ring-primary',
-    white: 'text-primary bg-white hover:bg-secondary focus:ring-secondary',
-    gray: 'text-primary bg-gray hover:bg-secondary focus:ring-secondary',
-    wide: 'text-primary bg-white hover:text-secondary focus:ring-secondary',
+    primary: 'text-white bg-primary hover:bg-secondary disabled:bg-primary data-[disabled]:bg-primary focus:ring-secondary',
+    secondary: 'text-white bg-secondary hover:text-primary disabled:text-white data-[disabled]:text-white focus:ring-primary',
+    white: 'text-primary bg-white hover:bg-secondary disabled:bg-white data-[disabled]:bg-white focus:ring-secondary',
+    gray: 'text-primary bg-gray hover:bg-secondary disabled:bg-gray data-[disabled]:bg-gray focus:ring-secondary',
+    wide: 'text-primary bg-white hover:text-secondary disabled:text-primary data-[disabled]:text-primary focus:ring-secondary',
 }
 
 const Button = (props) => {
-    const computeSize = sizeMap[props.size] ? sizeMap[props.size] : sizeMap[0]
+    const computeSize = sizeMap[props.size] ? sizeMap[props.size] : sizeMap[1]
     const computeColor = colorMap[props.theme] ? colorMap[props.theme] : colorMap.primary
 
     return (
-        <button className={[baseClasses, computeColor, computeSize, props.css].join(' ')}
-                type={props.type}
-                style={props.style}
-                onClick={props.clickHandler ? props.clickHandler : null}
+        <button
+            className={[baseClasses, computeColor, computeSize, props.css].join(' ')}
+            type={props.type}
+            style={props.style}
+            onClick={props.clickHandler ? props.clickHandler : null}
+            disabled={props.disabled || null}
         >
             {props.children}
         </button>
@@ -38,6 +40,7 @@ Button.defaultProps = {
     style: {},
     size: 1,
     theme: `primary`,
+    disabled: false,
 }
 
 Button.propTypes = {
@@ -48,21 +51,24 @@ Button.propTypes = {
     clickHandler: PropTypes.func,
     size: PropTypes.number,
     theme: PropTypes.string,
+    disabled: PropTypes.bool,
 }
 
 const LinkButton = (props) => {
-    const computeSize = sizeMap[props?.size] ? sizeMap[props.size] : sizeMap[0]
+    const computeSize = sizeMap[props?.size] ? sizeMap[props.size] : sizeMap[1]
     const computeColor = colorMap[props?.theme] ? colorMap[props.theme] : colorMap.primary
     const computeTarget = props?.target ? '_blank' : null
     const computeRel = props?.target ? 'noopener noreferrer' : null
 
     return (
         <Link href={props.href}>
-            <a className={[baseClasses, computeColor, computeSize, props.css].join(' ')}
-               target={computeTarget}
-               rel={computeRel}
+            <a
+                className={[baseClasses, computeColor, computeSize, props.css].join(' ')}
+                target={computeTarget}
+                rel={computeRel}
+                data-disabled={props.disabled ? '' : null}
             >
-                <span className={"py-2"}>{props.children}</span>
+                {props.children}
             </a>
         </Link>
     )
@@ -74,6 +80,7 @@ LinkButton.defaultProps = {
     size: 1,
     theme: `primary`,
     target: false,
+    disabled: false,
 }
 
 LinkButton.propTypes = {
@@ -83,6 +90,7 @@ LinkButton.propTypes = {
     size: PropTypes.number,
     theme: PropTypes.string,
     target: PropTypes.bool,
+    disabled: PropTypes.bool,
 }
 
 export {

@@ -1,11 +1,11 @@
 import source from "../../../../content/main.json"
-import {Button} from "../Button";
+import {Button} from "../Button"
 
 const FormGeneric = props => {
     const formData = source.forms || null
     const formName = props.name || "untitled"
     const subject = props.subject || formData.subject
-    const recipients = props.recipients ? [...props.recipients, ...formData.recipients] : formData.recipients
+    //const recipients = props.recipients ? [...props.recipients, ...formData.recipients] : formData.recipients
 
     return (
         <form

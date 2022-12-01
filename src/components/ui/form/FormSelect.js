@@ -7,7 +7,7 @@ const FormSelect = (props) => {
     return (
         <div className={"group relative"}>
             <select
-                className={[INPUT_BASE_CSS, "invalid:text-black/50 focus:text-black cursor-pointer", props.inputCss].join(' ')}
+                className={[INPUT_BASE_CSS, "peer invalid:text-black/50 focus:text-black cursor-pointer", props.inputCss].join(' ')}
                 placeholder={[(props.placeholder || props.label || "-"), (props.required ? "*" : null)].join('')}
                 name={slugify(props.name || props.label || props.placeholder)}
                 required={props.required || null}
