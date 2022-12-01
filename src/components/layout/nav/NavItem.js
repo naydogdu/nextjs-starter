@@ -12,6 +12,7 @@ const NavItem = (props) => {
                     className={["leading-none", props.css].join(' ')}
                     target={computeTarget}
                     rel={computeRel}
+                    onClick={props.onClick || null}
                 >
                     {props.children}
                 </a>

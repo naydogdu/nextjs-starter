@@ -31,10 +31,11 @@ const PrimaryNav = (props) => {
                         blank={el.blank}
                         css={[
                             "block font-medium uppercase text-primary",
-                            "underline-offset-1 hover:underline-offset-2 hover:underline-secondary-2",
+                            "hover:underline underline-offset-1 hover:underline-offset-8 decoration-primary",
                             "transition-all duration-150 ease-in hover:text-secondary",
                             (navbarOpen ? "text-4xl" : null),
                         ].join(' ')}
+                        onClick={() => setNavbarOpen(false)}
                     >
                         {/* TODO : With icon */}
                         {el.label}

@@ -17,7 +17,7 @@ const CookiePopin = ({dispatch}) => (
                 </Link>
             }
         </p>
-        <span className={"flex-shrink-0"}>
+        <span className={"flex-shrink-0 flex items-center justify-center gap-2"}>
             <Button clickHandler={() => dispatch({type: 'acceptAll'})}>{data.consent?.accept}</Button>
             <Button clickHandler={() => dispatch({type: 'declineAll'})}>{data.consent?.decline}</Button>
             <Button clickHandler={() => dispatch({type: 'showManageCookiePopup'})}>{data.consent?.manage}</Button>

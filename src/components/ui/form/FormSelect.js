@@ -19,7 +19,7 @@ const FormSelect = (props) => {
                 ))}
             </select>
             <Arrow className={[
-                "absolute border-gray/25 group-hover:border-gray/50 group-focus:border-black border-2 border-l-0 p-4 pl-2 pr-6 pointer-events-none transform scale-y-reverse top-0 right-0 h-full w-12 bg-white",
+                "absolute border-gray/25 group-hover:border-gray/50 peer-focus:border-black peer-focus:scale-y-100 border-2 border-l-0 p-4 pl-2 pr-6 pointer-events-none transform scale-y-[-1] top-0 right-0 h-full w-12 bg-white",
             ].join(' ')} />
         </div>
     )
