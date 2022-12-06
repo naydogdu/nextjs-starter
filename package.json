@@ -23,7 +23,7 @@
     "sharp": "^0.30.3"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^4.3.0",
+    "@netlify/plugin-nextjs": "^4.29.2",
     "autoprefixer": "^10.4.4",
     "html-react-parser": "^1.4.9",
     "postcss": "^8.4.12",
