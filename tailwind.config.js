@@ -17,6 +17,9 @@ module.exports = {
       'wide': {'raw': '(min-width:64rem) and (max-height:800px)'},
       'wide-sm': {'raw': '(min-width:64rem) and (max-height:700px)'},
       'wide-xs': {'raw': '(min-width:64rem) and (max-height:600px)'},
+      'max-lg': {'raw': '(max-width:68rem)'},
+      'max-md': {'raw': '(max-width:48rem)'},
+      'max-sm': {'raw': '(max-width:28rem)'},
     },
     colors: {
       transparent: 'transparent',
