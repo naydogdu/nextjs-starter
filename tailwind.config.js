@@ -31,7 +31,7 @@ module.exports = {
       secondary: '#89E35B',
     },
     fontFamily: {
-      sans: ['Gilroy', ...defaultTheme.fontFamily.sans],
+      sans: ['Inter', ...defaultTheme.fontFamily.sans],
       serif: [...defaultTheme.fontFamily.serif],
     },
     minWidth: (theme) => ({
