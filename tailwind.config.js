@@ -28,7 +28,9 @@ module.exports = {
       black: '#000000',
       gray: '#e5e7f3',
       primary: '#001489',
-      secondary: '#89E35B',
+      secondary: '#7db3d8',
+      green: '#a3e635',
+      red: '#ef4444',
     },
     fontFamily: {
       sans: ['Inter', ...defaultTheme.fontFamily.sans],
