@@ -3,6 +3,7 @@ import {useSwipeable} from "react-swipeable"
 import SliderNavigation from "./SliderNavigation"
 import SliderItem from "./SliderItem"
 import SliderPagination from "./SliderPagination"
+import Modal from "../Modal"
 
 const mapItemCss = {
     def: {
@@ -46,6 +47,7 @@ const mapVariations = {
 }
 
 const Slider = props => {
+    const [zoomed, setZoomed] = useState(null)
     const slideType = props.slideType || 'def'
     const Slide = mapVariations[slideType].slide || mapVariations.def.slide
     const items = props.data || null
@@ -102,6 +104,8 @@ const Slider = props => {
                     {items.map((el,i) => (
                         <Slide
                             key={i}
+                            ratio={props.ratio || null}
+                            objectFit={props.objectFit || null}
                             {...el}
                             active={i === active}
                             i={i}
@@ -117,7 +121,7 @@ const Slider = props => {
                                 mapItemCss.xl[columns.xl],
                                 props.css,
                             ].join(' ')}
-                            clickHandler={props.clickHandler ? () => props.clickHandler(i) : null}
+                            clickHandler={props.zoom ? () => setZoomed(i) : null}
                         />
                     ))}
                 </ul>
@@ -141,6 +145,22 @@ const Slider = props => {
                         />
                     </SliderNavigation>
                 </div>
+            }
+            {zoomed !== null &&
+                <Modal opened hide={() => setZoomed(null)} theme={"white"}>
+                    <div className={"bg-black/50 h-full p-8 xl:py-12 xl:px-16"}>
+                        <Slider
+                            data={items}
+                            paginationCss={"!hidden"}
+                            active={zoomed}
+                            zoom={false}
+                            navCss={"absolute top-1/2 left-0 w-full -translate-y-1/2 px-4"}
+                            ratio={"h-full"}
+                            css={"h-full"}
+                            objectFit={"contain"}
+                        />
+                    </div>
+                </Modal>
             }
         </>
     )
