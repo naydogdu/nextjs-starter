@@ -57,8 +57,8 @@ Button.propTypes = {
 const LinkButton = (props) => {
     const computeSize = sizeMap[props?.size] ? sizeMap[props.size] : sizeMap[1]
     const computeColor = colorMap[props?.theme] ? colorMap[props.theme] : colorMap.primary
-    const computeTarget = props?.target ? '_blank' : null
-    const computeRel = props?.target ? 'noopener noreferrer' : null
+    const computeTarget = props?.blank ? '_blank' : null
+    const computeRel = props?.blank ? 'noopener noreferrer' : null
 
     return (
         <Link href={props.href}>
@@ -79,7 +79,7 @@ LinkButton.defaultProps = {
     href: `/`,
     size: 1,
     theme: `primary`,
-    target: false,
+    blank: false,
     disabled: false,
 }
 
@@ -89,7 +89,7 @@ LinkButton.propTypes = {
     href: PropTypes.string,
     size: PropTypes.number,
     theme: PropTypes.string,
-    target: PropTypes.bool,
+    blank: PropTypes.bool,
     disabled: PropTypes.bool,
 }
 

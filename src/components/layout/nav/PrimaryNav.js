@@ -11,7 +11,7 @@ const PrimaryNav = (props) => {
     const MenuIcon = navbarOpen ? CloseIcon : BarIcon
 
     return (
-        <nav className={["text-right text-md"].join(' ')}>
+        <nav className={["text-center lg:text-right text-md"].join(' ')}>
             <button className={"block ml-auto group lg:hidden relative z-50 focus:outline-none"}
                     onClick={() => setNavbarOpen(!navbarOpen)}
             >
@@ -21,8 +21,8 @@ const PrimaryNav = (props) => {
                 </span>
             </button>
             <ul className={[
-                "space-y-10 lg:flex flex-col lg:space-y-0 lg:flex-row lg:space-x-4 xl:space-x-6",
-                (navbarOpen ? "fixed sm:min-w-120 pt-32 top-0 right-0 pl-24 h-screen pr-8 flex flex-col justify-center overflow-y-auto bg-white shadow-xl" : "hidden"),
+                "flex bg-white fixed top-0 -translate-y-full transition-all left-0 overflow-y-auto h-screen w-full gap-10 flex-col justify-center lg:flex-row lg:flex lg:gap-4 xl:gap-6",
+                (navbarOpen ? "!translate-y-0 shadow-xl" : ""),
             ].join(' ')}>
                 {navData.primary?.items?.map((el,i) => (
                     <NavItem
