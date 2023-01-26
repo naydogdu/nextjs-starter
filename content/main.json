@@ -5,7 +5,7 @@
     "gaId": "X-XXX",
     "activeGa": false,
     "gtmId": "GTM-XXXX",
-    "activeGtm": true,
+    "activeGtm": false,
     "banner": "/static/images/banner.jpg"
   },
   "consent": {
