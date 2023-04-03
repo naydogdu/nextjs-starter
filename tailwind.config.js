@@ -2,7 +2,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: [
-    './content/**/*.json',
+    './content/**/*.{json,md,mdx}',
     './pages/**/*.js',
     './src/**/*.{js,svg}',
   ],
