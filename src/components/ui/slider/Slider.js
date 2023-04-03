@@ -1,4 +1,4 @@
-import {useState} from "react"
+import {useEffect, useRef, useState} from "react"
 import {useSwipeable} from "react-swipeable"
 import SliderNavigation from "./SliderNavigation"
 import SliderItem from "./SliderItem"
@@ -51,6 +51,8 @@ const Slider = props => {
     const slideType = props.slideType || 'def'
     const Slide = mapVariations[slideType].slide || mapVariations.def.slide
     const items = props.data || null
+    const autoPlay = props.autoPlay || 0
+
     const columns = {
         def: props.col || 1,
         md: props.mdCol || props.col || 1,
@@ -92,6 +94,28 @@ const Slider = props => {
         onSwipedRight: () => goToPrevSlide(),
         trackMouse: true,
     })
+
+    const timeoutRef = useRef(null)
+
+    function resetTimeout() {
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+        }
+    }
+
+    useEffect(() => {
+        resetTimeout()
+
+        if( autoPlay > 0 ) {
+            timeoutRef.current = setTimeout(() =>
+                setActive((prevIndex) =>
+                    prevIndex === (items.length-1) ? 0 : prevIndex + 1
+                ), autoPlay
+            )
+        }
+
+        return () => resetTimeout()
+    }, [active])
 
     return (
         <>
