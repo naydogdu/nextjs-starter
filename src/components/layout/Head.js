@@ -19,6 +19,8 @@ const Head = (props) => {
             <link rel="apple-touch-icon" href="/static/icons/apple-icon.png" />
             <link rel="manifest" href="/manifest.webmanifest" />
 
+            {props.canonical && <link rel="canonical" href={[url, props.canonical].join('')} />}
+
             <meta name="title" content={title} />
             <meta property="og:title" content={title} />
             <meta name="twitter:title" content={title} />
