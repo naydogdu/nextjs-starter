@@ -1,6 +1,4 @@
 [build]
   command = "npm run build"
   publish = ".next"
-  environment = { NEXT_PUBLIC_SITE_URL = "http://localhost:3000" }
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+  environment = { NEXT_PUBLIC_SITE_URL = "https://tw-nextjs-starter.netlify.app" }

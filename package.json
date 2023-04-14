@@ -8,10 +8,14 @@
     "start": "tinacms build && next start"
   },
   "dependencies": {
-    "@tinacms/cli": "^1.5.6",
+    "@tinacms/auth": "^1.0.3",
+    "@tinacms/datalayer": "^1.2.7",
+    "date-fns": "^2.23.0",
     "framer-motion": "^6.2.8",
     "gray-matter": "4.0.3",
+    "js-base64": "^3.7.5",
     "lodash": "^4.17.21",
+    "mongodb-level": "^0.0.2",
     "next": "12.1.0",
     "next-react-svg": "^1.1.3",
     "prop-types": "^15.8.1",
@@ -25,7 +29,7 @@
     "tinacms": "^1.4.6"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^4.29.2",
+    "@tinacms/cli": "^1.5.6",
     "autoprefixer": "^10.4.4",
     "html-react-parser": "^1.4.9",
     "postcss": "^8.4.12",
