@@ -1,13 +1,19 @@
-import { defineConfig } from "tinacms";
-import {menu_itemFields, pageFields} from "./templates";
+import { defineConfig } from "tinacms"
+import {menu_itemFields, pageFields} from "./templates"
 
 // Your hosting provider likely exposes this as an environment variable
-const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
+const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main"
 
 export default defineConfig({
   branch,
-  clientId: null, // Get this from tina.io
-  token: null, // Get this from tina.io
+  /*contentApiUrlOverride: '/api/gql',
+  admin: {
+    auth: {
+      useLocalAuth: process.env.TINA_PUBLIC_IS_LOCAL === 'true',
+    }
+  },*/
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
+  token: process.env.TINA_TOKEN || "foo",
   client: { skip: true },
   build: {
     outputFolder: "admin",
@@ -337,4 +343,4 @@ export default defineConfig({
       },
     ],
   },
-});
+})
