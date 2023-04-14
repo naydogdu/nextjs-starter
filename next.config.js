@@ -6,6 +6,14 @@ module.exports = withReactSvg({
     /*images: {
         formats: ['image/avif', 'image/webp'],
     },*/
+    async rewrites() {
+        return [
+            {
+                source: "/admin",
+                destination: "/admin/index.html",
+            },
+        ];
+    },
     webpack(config, options) {
         return config
     }

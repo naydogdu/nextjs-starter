@@ -46,5 +46,6 @@
         "icon": "/static/images/twitter.svg"
       }
     ]
-  }
+  },
+  "_template": "menu"
 }

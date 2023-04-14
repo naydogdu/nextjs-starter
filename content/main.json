@@ -52,5 +52,6 @@
       "test@test.com"
     ],
     "subject": "You received a new message"
-  }
+  },
+  "_template": "settings"
 }
