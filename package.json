@@ -16,6 +16,7 @@
     "fs-extra": "^11.1.1",
     "gray-matter": "4.0.3",
     "js-base64": "^3.7.5",
+    "js-sha256": "^0.9.0",
     "lodash": "^4.17.21",
     "mongodb-level": "^0.0.2",
     "next": "12.3.4",

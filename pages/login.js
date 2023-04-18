@@ -5,12 +5,13 @@ import FormInput from "../src/components/ui/form/FormInput"
 import {Button} from "../src/components/ui/Button"
 import getTinaLocalKey from "../src/utils/getTinaLocalKey"
 import {useRouter} from "next/router"
+import hash from "../src/utils/hash"
 
 const Login = () => {
     const router = useRouter()
     function handleSubmit(e) {
         e.preventDefault()
-        localStorage.setItem(getTinaLocalKey, `${e.target?.[0]?.value}:${e.target?.[1]?.value}`)
+        localStorage.setItem(getTinaLocalKey, hash(`${e.target?.[0]?.value}:${e.target?.[1]?.value}`))
         router.push('/admin')
     }
 

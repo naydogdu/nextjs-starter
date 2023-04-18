@@ -1,9 +1,10 @@
 import { databaseRequest } from "../../src/utils/databaseConnection"
+import hash from "../../src/utils/hash"
 
 const nextApiHandler = async (req, res) => {
     const keys = Object.keys(process.env).filter(k => k.startsWith('ADMIN_TOKEN_'))
     const tokens = keys.map(el => process.env[el])
-    const foundToken = tokens.find(token => req.headers.authorization === `Bearer ${token}`)
+    const foundToken = tokens.find(token => req.headers.authorization === `Bearer ${hash(token)}`)
 
     const isAuthorized =
         process.env.TINA_PUBLIC_IS_LOCAL === "true" ||
