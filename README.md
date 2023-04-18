@@ -16,6 +16,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 * Blog & related utilities (prev/next posts, share widget, etc...)
 * Many other stuffs...
 
+## Tina CMS
+
+Self hosted Tina CMS. Fill your `.env` file with copying `.env.example`, see more [here](https://github.com/tinacms/tina-self-hosted-demo)
+
 ## Getting Started
 
 First, run the development server:
@@ -26,7 +30,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Deploy on Netlify
+## Deploy 
 
 Coming soon.
 

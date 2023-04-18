@@ -1,22 +1,6 @@
-import database from "../../tina/database"
+import database from "../../.tina/database"
 import {resolve} from "@tinacms/datalayer"
-
-const generateRequester = client => {
-  return async (doc, vars, _options) => {
-    const data = await client.request({
-      query: doc,
-      variables: vars
-    })
-
-    return {data: data?.data, query: doc, variables: vars || {}}
-  }
-}
-
-
-const queries = (client) => {
-  const requester = generateRequester(client)
-  return getSdk(requester)
-}
+import {queries} from "../../.tina/__generated__/types"
 
 export async function databaseRequest({ query, variables }) {
   const config = {

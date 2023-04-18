@@ -1,11 +1,16 @@
-const withReactSvg = require('next-react-svg')
 const path = require('path')
 
-module.exports = withReactSvg({
+/**
+ * @type {import('next-react-svg').NextReactSvgConfig}
+ */
+const nextReactSvgConfig = {
     include: path.resolve(__dirname, 'src/images'),
-    /*images: {
-        formats: ['image/avif', 'image/webp'],
-    },*/
+};
+
+/**
+ * @type {import('next').NextConfig}
+ */
+const nextConfig = {
     async rewrites() {
         return [
             {
@@ -17,4 +22,8 @@ module.exports = withReactSvg({
     webpack(config, options) {
         return config
     }
-})
+};
+
+const withReactSvg = require('next-react-svg')(nextReactSvgConfig);
+
+module.exports = withReactSvg(nextConfig);

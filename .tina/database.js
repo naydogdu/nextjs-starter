@@ -4,6 +4,8 @@ import { Octokit } from "@octokit/rest"
 import { Base64 } from "js-base64"
 import path from "path"
 import fs from "fs"
+import main from "../content/main.json"
+import slugify from "../src/utils/slugify"
 
 // Manage this flag in your CI/CD pipeline and make sure it is set to false in production
 const isLocal = process.env.TINA_PUBLIC_IS_LOCAL === "true"
@@ -22,10 +24,12 @@ const octokit = new Octokit({
 
 const localLevelStore = new TinaLevelClient()
 const mongodbLevelStore = new MongodbLevel({
-  collectionName: "tinacms",
-  dbName: "tinacms",
+  collectionName: `tina_${slugify(main.app.siteName)}`,
+  dbName: `tina_${slugify(main.app.siteName)}`,
   mongoUri: process.env.MONGODB_URI,
 })
+
+//console.log('mongodbLevelStore', mongodbLevelStore, isLocal)
 
 if (isLocal) {
   localLevelStore.openConnection()
@@ -55,7 +59,6 @@ const githubOnPut = async (key, value) => {
     sha,
   })
 }
-
 const localOnPut = async (key, value) => {
   const currentPath = path.join(process.cwd(), key)
   fs.writeFileSync(currentPath, value)

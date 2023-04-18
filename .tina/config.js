@@ -1,20 +1,52 @@
 import { defineConfig } from "tinacms"
 import {menu_itemFields, pageFields} from "./templates"
+import main from "../content/main.json"
+import getTinaLocalKey from "../src/utils/getTinaLocalKey"
 
 // Your hosting provider likely exposes this as an environment variable
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main"
+const LOCAL_KEY = getTinaLocalKey || null
 
 export default defineConfig({
   branch,
-  /*contentApiUrlOverride: '/api/gql',
+  contentApiUrlOverride: '/api/gql',
   admin: {
     auth: {
-      useLocalAuth: process.env.TINA_PUBLIC_IS_LOCAL === 'true',
+      //useLocalAuth: process.env.TINA_PUBLIC_IS_LOCAL === 'true',
+      customAuth: true,
+      authenticate: async () => {
+        console.log('authenticate...', LOCAL_KEY)
+        // TODO : Remove test login
+        localStorage.setItem(LOCAL_KEY, "test")
+      },
+      getToken: async () => {
+        // Add your own getting token
+        const token = localStorage.getItem(LOCAL_KEY)
+        console.log('getToken...', token)
+        if (!token) {
+          return { id_token: "" }
+        }
+        return { id_token: token }
+      },
+      getUser: async () => {
+        // Add your own getting user
+        // if this function returns a truthy value, the user is logged in and if it rutnrs
+        console.log('getUser...', localStorage.getItem(LOCAL_KEY), LOCAL_KEY)
+        if (localStorage.getItem(LOCAL_KEY)) {
+          return true
+        }
+        return false
+      },
+      logout: async () => {
+        // add your own logout logic
+        localStorage.removeItem(LOCAL_KEY)
+        window.location = "/"
+      },
     }
-  },*/
-  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
-  token: process.env.TINA_TOKEN || "foo",
-  client: { skip: true },
+  },
+  //clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
+  //token: process.env.TINA_TOKEN || "foo",
+  //client: { skip: true },
   build: {
     outputFolder: "admin",
     publicFolder: "public",

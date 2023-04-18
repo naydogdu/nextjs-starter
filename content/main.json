@@ -1,7 +1,7 @@
 {
   "app": {
     "description": "A simple Next.js starter",
-    "siteName": "Next JS",
+    "siteName": "Next JS Starter",
     "gaId": "X-XXX",
     "activeGa": false,
     "gtmId": "GTM-XXXX",
