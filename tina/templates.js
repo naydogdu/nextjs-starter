@@ -59,6 +59,11 @@ export function menuFields() {
           name: "items",
           label: "Items",
           list: true,
+          ui: {
+            itemProps: item => {
+              return { label: item?.label }
+            }
+          },
           fields: [...menu_itemFields()],
         },
       ],
@@ -73,6 +78,11 @@ export function menuFields() {
           name: "items",
           label: "Items",
           list: true,
+          ui: {
+            itemProps: item => {
+              return { label: item?.label }
+            }
+          },
           fields: [...menu_itemFields()],
         },
       ],
@@ -87,6 +97,11 @@ export function menuFields() {
           name: "items",
           label: "Items",
           list: true,
+          ui: {
+            itemProps: item => {
+              return { label: item?.label }
+            }
+          },
           fields: [...menu_itemFields()],
         },
       ],

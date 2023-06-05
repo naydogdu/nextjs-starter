@@ -3,6 +3,7 @@ import navData from '../../../../content/nav.json'
 
 import {useState} from "react"
 import NavItem from "./NavItem"
+
 import BarIcon from '../../../images/menu.svg'
 import CloseIcon from '../../../images/close.svg'
 
@@ -12,8 +13,9 @@ const PrimaryNav = (props) => {
 
     return (
         <nav className={["text-center lg:text-right text-md"].join(' ')}>
-            <button className={"block ml-auto group lg:hidden relative z-50 focus:outline-none"}
-                    onClick={() => setNavbarOpen(!navbarOpen)}
+            <button
+                className={"block ml-auto group lg:hidden relative z-50 focus:outline-none"}
+                onClick={() => setNavbarOpen(!navbarOpen)}
             >
                 <MenuIcon className={"w-8 h-8 text-primary group-hover:text-secondary"} />
                 <span className={"sr-only"}>
@@ -21,7 +23,9 @@ const PrimaryNav = (props) => {
                 </span>
             </button>
             <ul className={[
-                "flex bg-white fixed top-0 -translate-y-full transition-all left-0 overflow-y-auto h-screen w-full gap-10 flex-col justify-center lg:flex-row lg:flex lg:gap-4 xl:gap-6",
+                "flex flex-col justify-center transition-all w-full gap-10",
+                "lg:flex-row lg:gap-4 xl:gap-6",
+                "max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:bg-white max-lg:-translate-y-full max-lg:overflow-y-auto max-lg:h-screen",
                 (navbarOpen ? "!translate-y-0 shadow-xl" : ""),
             ].join(' ')}>
                 {navData.primary?.items?.map((el,i) => (
@@ -31,7 +35,6 @@ const PrimaryNav = (props) => {
                         blank={el.blank}
                         css={[
                             "block font-medium uppercase text-primary",
-                            "hover:underline underline-offset-1 hover:underline-offset-8 decoration-primary",
                             "transition-all duration-150 ease-in hover:text-secondary",
                             (navbarOpen ? "text-4xl" : null),
                         ].join(' ')}

@@ -1,6 +1,6 @@
 {
   "name": "next-starter",
-  "version": "0.7.5",
+  "version": "0.8.0",
   "private": true,
   "scripts": {
     "dev": "tinacms dev -c \"next dev\"",
@@ -8,16 +8,10 @@
     "start": "tinacms build && next start"
   },
   "dependencies": {
-    "@octokit/rest": "^19.0.7",
-    "@tinacms/auth": "^1.0.3",
-    "@tinacms/datalayer": "^1.2.7",
     "date-fns": "^2.23.0",
     "framer-motion": "^6.2.8",
     "fs-extra": "^11.1.1",
     "gray-matter": "4.0.3",
-    "js-base64": "^3.7.5",
-    "js-sha256": "^0.9.0",
-    "lodash": "^4.17.21",
     "mongodb-level": "^0.0.2",
     "next": "12.3.4",
     "next-react-svg": "^1.2.0",
@@ -28,11 +22,10 @@
     "react-swipeable": "^6.2.1",
     "remark": "14.0.2",
     "remark-html": "15.0.1",
-    "sharp": "^0.30.3",
-    "tinacms": "^1.4.6"
+    "tinacms": "^1.5.8"
   },
   "devDependencies": {
-    "@tinacms/cli": "^1.5.6",
+    "@tinacms/cli": "^1.5.16",
     "autoprefixer": "^10.4.4",
     "html-react-parser": "^1.4.9",
     "postcss": "^8.4.12",
