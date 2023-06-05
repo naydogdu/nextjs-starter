@@ -25,11 +25,7 @@ export default function Post({post}) {
 }
 
 export async function getStaticProps({ params }) {
-    const page = getContentBySlug(
-        'post',
-        params.slug,
-        ['title', 'slug', 'preview', 'date', 'content', 'seo']
-    )
+    const page = getContentBySlug('post', params.slug)
     const content = page?.content ? await markdownToHtml(page?.content) : ''
     const adjacent = getAdjacentPosts(params.slug)
 
