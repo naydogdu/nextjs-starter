@@ -51,7 +51,7 @@ const Modal = ({opened, hide, theme, children}) => {
     return parentNode ? ReactDOM.createPortal(
         <div
             className={[
-                "fixed top-0 w-full h-full z-100",
+                "fixed top-0 w-full h-full z-100 overscroll-none overflow-y-scroll scrollbar-hidden",
                 (opened ? "left-0 opacity-100" : "-left-full opacity-0 pointer-events-none")
             ].join(' ')}
             aria-modal aria-hidden tabIndex={-1} role="dialog"
