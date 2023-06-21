@@ -3,13 +3,9 @@ import text from "../../../content/main.json"
 import Script from "next/script"
 import {GA_TRACKING_ID, GTM_TRACKING_ID} from "../../utils/gtag"
 import {useCookieConsentState} from "./cookie/CookieConsent"
-import {useEffect} from "react"
 
 const GA = () => {
     const cookieConsentState = useCookieConsentState()
-
-    useEffect(() => {
-    }, [cookieConsentState])
 
     return (
         <>
