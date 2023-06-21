@@ -13,7 +13,7 @@ const GA = () => {
                 <Script id={"g-tag"} src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
             }
             {(text.app.activeGa && ((cookieConsentState.isSet > 0 && cookieConsentState.marketing > 0) || !cookieConsentState.isSet)) &&
-                <Script id={"g-tag-tracker"} strategy={"beforeInteractive"}>
+                <Script id={"g-tag-tracker"}>
                     {`
                         window.dataLayer = window.dataLayer || [];
                         function gtag(){dataLayer.push(arguments);}
@@ -25,7 +25,7 @@ const GA = () => {
                 </Script>
             }
             {(text.app?.activeGtm && ((cookieConsentState.isSet > 0 && cookieConsentState.marketing > 0) || !cookieConsentState.isSet)) &&
-                <Script id={"gtm-tracker"} strategy={"beforeInteractive"}>
+                <Script id={"gtm-tracker"}>
                     {`
                         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
