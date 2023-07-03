@@ -1,14 +1,25 @@
 import { defineConfig } from "tinacms";
-import {menu_itemFields, pageFields, settingsFields} from "./templates";
+import {menu_itemFields, pageFields, settingsFields} from "./templates"
+import getTinaLocalKey from "../src/utils/getTinaLocalKey"
 
 // Your hosting provider likely exposes this as an environment variable
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
 
 export default defineConfig({
   branch,
-  clientId: null, // Get this from tina.io
-  token: null, // Get this from tina.io
-  client: { skip: true },
+  //clientId: null, // Get this from tina.io
+  //token: null, // Get this from tina.io
+  customAuth: true,
+  async authenticate() {
+    console.log('Authenticating...')
+    window.location.href = "/login"
+    return {}
+  },
+  async logOut() {
+    console.log('logOut...')
+    localStorage.removeItem(getTinaLocalKey)
+    window.location.href = '/'
+  },
   build: {
     outputFolder: "admin",
     publicFolder: "public",
