@@ -7,19 +7,29 @@ const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
 
 export default defineConfig({
   branch,
+  contentApiUrlOverride: '/api/gql',
+  admin: {
+    auth: {
+      customAuth: true,
+      async authenticate() {
+        console.log('Authenticating...')
+        window.location.href = "/login"
+        return {}
+      },
+      getToken: async () => {
+        return {
+          id_token: process.env.ADMIN_TOKEN_1,
+        }
+      },
+      async logOut() {
+        console.log('logOut...')
+        localStorage.removeItem(getTinaLocalKey)
+        window.location.href = '/'
+      },
+    }
+  },
   //clientId: null, // Get this from tina.io
   //token: null, // Get this from tina.io
-  customAuth: true,
-  async authenticate() {
-    console.log('Authenticating...')
-    window.location.href = "/login"
-    return {}
-  },
-  async logOut() {
-    console.log('logOut...')
-    localStorage.removeItem(getTinaLocalKey)
-    window.location.href = '/'
-  },
   build: {
     outputFolder: "admin",
     publicFolder: "public",
