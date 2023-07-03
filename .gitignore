@@ -39,3 +39,5 @@ yarn-error.log*
 node_modules
 /.env
 /pages/.tina-sample.js
+
+node_modules
